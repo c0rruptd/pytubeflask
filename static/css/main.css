@@ -1,0 +1,59 @@
+body{
+    background-color: whitesmoke;
+    font-family: sans-serif;
+}
+
+form {
+    text-align: center;
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    background-color: rgb(255, 75, 75);
+    border-color: black;
+    border-radius: 10px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: white;
+    border-color: black;
+    min-width: 300px;
+}
+
+input[type="submit"]:hover{
+    color: greenyellow;
+    background-color: green;
+}
+
+a:visited{
+    color:white
+}
+
+a:hover{
+    color: darkred;
+}
+
+.mdiv{
+    margin: 20px 0 0 0;
+}
+.centertext{
+    text-align: center;
+}
+.text{
+    text-align: center;
+    margin: auto;
+    padding: 10px 0 0 0;
+}
+
+.linkinput{
+    margin: 20px, 20px, 0, 0;   
+    width: 100px;
+    width: 43ch;
+    text-align: center;
+}

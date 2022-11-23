@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Download Youtube Videos Audios Thumbnails</title>
+{% endblock %}
+
+{% block body %}
+<div class="mdiv">
+    <form action="#" method="post"> 
+        <h1 class="text">Free Youtube Audio & Video Downloader</h1>
+        <p>https://www.youtube.com/watch?v=OtRuEhm9Eoo</p>
+        <hr>
+        Enter Your Download Link: <input class="linkinput" name="downloadlink" type="text" value="Your Youtube link" required pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"/><br>
+
+        <p>Enter Your File Type:</p>
+
+        <input type="radio" id="mp3" name="dtype" value="mp3" required> 
+        <label for="mp3">MP3</label><br>
+
+        <input type="radio" id="mp4" name="dtype" value="mp4"> 
+        <label for="mp4">MP4</label><br>
+
+        <input type="radio" id="thumb" name="dtype" value="thumb">
+        <label for="thumb">Thumbnail</label><br>
+        <br>
+
+        <input type="submit" value="Download"/> 
+    </form>
+</div>
+{% endblock %}
