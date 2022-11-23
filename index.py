@@ -1,12 +1,12 @@
 from flask import Flask, render_template, url_for, request, redirect, send_file
 from urllib.request import urlretrieve
 from pytube import YouTube, exceptions
-from os import path, rename
+from os import path, rename, getcwd
 
 app = Flask(__name__)
 
 
-def download_audio(video_link="", SAVE_PATH="C:/Users/ariyu/Desktop/vscode/python/youtube/"):
+def download_audio(video_link="", SAVE_PATH=getcwd()):
     yt = YouTube(video_link)   
 
     stream = yt.streams.filter(only_audio=True).first()
@@ -18,14 +18,14 @@ def download_audio(video_link="", SAVE_PATH="C:/Users/ariyu/Desktop/vscode/pytho
     new_file = base + '.mp3'
     rename(out_file, new_file)
 
-def download_video(video_link="", SAVE_PATH="C:/Users/ariyu/Desktop/vscode/python/youtube/", resolution="720p"):
+def download_video(video_link="", SAVE_PATH=getcwd(), resolution="720p"):
     yt = YouTube(video_link)
 
     stream = yt.streams.filter(res=resolution).first()
     app.logger.info(f"Downloading: {yt.title}")
     stream.download(SAVE_PATH)
 
-def download_thumbnail(video_link="", SAVE_PATH="C:/Users/ariyu/Desktop/vscode/python/youtube/"):
+def download_thumbnail(video_link="", SAVE_PATH=getcwd()):
     imgURL = YouTube(video_link).thumbnail_url
     app.logger.info(f"Downloading: {YouTube(video_link).title}")
     urlretrieve(imgURL, f"thumbnail {YouTube(video_link).title}.jpg")
